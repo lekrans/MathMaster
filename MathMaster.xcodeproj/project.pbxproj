@@ -11,6 +11,14 @@
 		E100DA59260C69F000CF3C14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E100DA58260C69F000CF3C14 /* ContentView.swift */; };
 		E100DA5B260C69F200CF3C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E100DA5A260C69F200CF3C14 /* Assets.xcassets */; };
 		E100DA5E260C69F200CF3C14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E100DA5D260C69F200CF3C14 /* Preview Assets.xcassets */; };
+		E100DA72260CBF6100CF3C14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E100DA71260CBF6100CF3C14 /* SplashView.swift */; };
+		E100DA76260CD3F300CF3C14 /* sansTalking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E100DA75260CD3F300CF3C14 /* sansTalking.mp3 */; };
+		E11D723F26234D92007183C0 /* NeoButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D723E26234D92007183C0 /* NeoButtonColor.swift */; };
+		E11D724426240ABE007183C0 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D724326240ABE007183C0 /* CalculatorButton.swift */; };
+		E187FDA2260E1BE500104D94 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187FDA1260E1BE500104D94 /* SoundPlayer.swift */; };
+		E187FDA6260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E187FDA5260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 */; };
+		E187FDA9260E243A00104D94 /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187FDA8260E243A00104D94 /* SoundPlayerView.swift */; };
+		E187FDAC260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E187FDAB260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		E100DA5A260C69F200CF3C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E100DA5D260C69F200CF3C14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E100DA5F260C69F200CF3C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E100DA71260CBF6100CF3C14 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E100DA75260CD3F300CF3C14 /* sansTalking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sansTalking.mp3; sourceTree = "<group>"; };
+		E11D723E26234D92007183C0 /* NeoButtonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoButtonColor.swift; sourceTree = "<group>"; };
+		E11D724326240ABE007183C0 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		E187FDA1260E1BE500104D94 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		E187FDA5260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ABeautifulDay-UndertaleAnimation.mp3"; sourceTree = "<group>"; };
+		E187FDA8260E243A00104D94 /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
+		E187FDAB260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ed Sheeran - Shape of you.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +68,16 @@
 		E100DA55260C69F000CF3C14 /* MathMaster */ = {
 			isa = PBXGroup;
 			children = (
+				E11D724226240A56007183C0 /* model */,
+				E11D723D26234D77007183C0 /* extensions */,
+				E187FDA4260E228C00104D94 /* Songs */,
+				E187FDA0260E1B3C00104D94 /* Sound */,
+				E100DA70260CBF4A00CF3C14 /* Views */,
 				E100DA56260C69F000CF3C14 /* MathMasterApp.swift */,
 				E100DA58260C69F000CF3C14 /* ContentView.swift */,
 				E100DA5A260C69F200CF3C14 /* Assets.xcassets */,
 				E100DA5F260C69F200CF3C14 /* Info.plist */,
+				E100DA75260CD3F300CF3C14 /* sansTalking.mp3 */,
 				E100DA5C260C69F200CF3C14 /* Preview Content */,
 			);
 			path = MathMaster;
@@ -67,6 +89,48 @@
 				E100DA5D260C69F200CF3C14 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E100DA70260CBF4A00CF3C14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E100DA71260CBF6100CF3C14 /* SplashView.swift */,
+				E187FDA8260E243A00104D94 /* SoundPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E11D723D26234D77007183C0 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E11D723E26234D92007183C0 /* NeoButtonColor.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		E11D724226240A56007183C0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E11D724326240ABE007183C0 /* CalculatorButton.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E187FDA0260E1B3C00104D94 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				E187FDA1260E1BE500104D94 /* SoundPlayer.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		E187FDA4260E228C00104D94 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				E187FDA5260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 */,
+				E187FDAB260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 */,
+			);
+			path = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E100DA5E260C69F200CF3C14 /* Preview Assets.xcassets in Resources */,
+				E100DA76260CD3F300CF3C14 /* sansTalking.mp3 in Resources */,
 				E100DA5B260C69F200CF3C14 /* Assets.xcassets in Resources */,
+				E187FDAC260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 in Resources */,
+				E187FDA6260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E187FDA9260E243A00104D94 /* SoundPlayerView.swift in Sources */,
+				E11D724426240ABE007183C0 /* CalculatorButton.swift in Sources */,
 				E100DA59260C69F000CF3C14 /* ContentView.swift in Sources */,
 				E100DA57260C69F000CF3C14 /* MathMasterApp.swift in Sources */,
+				E187FDA2260E1BE500104D94 /* SoundPlayer.swift in Sources */,
+				E11D723F26234D92007183C0 /* NeoButtonColor.swift in Sources */,
+				E100DA72260CBF6100CF3C14 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
