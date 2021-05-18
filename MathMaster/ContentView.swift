@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import MLKeyboardLib
+import MLMathMasterEngine
 
 struct ContentView: View {
     @State private var answerText: String = ""
     @State private var text: String = ""
+        
+    @State var category: MLMathMasterGameCategory?
+    
+    @StateObject var keyboard2 = MLNumericKeyboard()
+    @StateObject var engine = MLMathMasterEngine()
+    var soundPlayer = SoundPlayer()
+    
     
     
     // MARK: - Properties
@@ -19,23 +28,48 @@ struct ContentView: View {
         self.padding * 2 + self.spacing * 2
     }
     
+    fileprivate func handleNewQuestion() {
+        answerText = keyboard2.text
+        keyboard2.text = ""
+        keyboard2.submitted = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            do {
+                try engine.qm?.activateNextQuestion()
+                answerText = ""
+            } catch {
+                print("Error \(error), \(error.localizedDescription)")
+            }
+        }
+    }
+    
     var body: some View {
         ZStack{
-            Color.element.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            GeometryReader { geometry in
-                VStack {
-                    Text(text)
-                    Spacer()
-                    ButtonRow(buttons: ["Press to answer"], geometry: geometry, totalPadding: totalPadding, answerText: $answerText)
-                    ButtonRow(buttons: ["1", "2", "3"], geometry: geometry, totalPadding: totalPadding, answerText: $answerText)
-                    ButtonRow(buttons: ["4", "5", "6"], geometry: geometry, totalPadding: totalPadding, answerText: $answerText)
-                    ButtonRow(buttons: ["7", "8", "9"], geometry: geometry, totalPadding: totalPadding, answerText: $answerText)
-                    ButtonRow(buttons: ["empty", "0", "back"], geometry: geometry, totalPadding: totalPadding, answerText: $answerText)
 
+            Color.element.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            SoundPlayerView(soundPlayer: soundPlayer)
+                        .opacity(0)
+                .frame(height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            
+            Group {
+                
+                VStack {
+                    TopView(model: engine, category: $category, answer: $answerText, keyboardText: $keyboard2.text)
+                    
+                    if engine.gameState == .started {
+                        MLNumKeyView(keyboard: keyboard2, configuration: MLNumKeyViewConfiguration(returnKey: .top))
+                            .frame(width: nil, height: 240)
+                    } else if engine.gameState == .stopped {
+                        NewGameView(model: engine, category: $category)
+                    }
                 }.padding()
             }.preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-            SoundPlayerView(soundPlayer: SoundPlayer())
-                        .opacity(0)
+            .onChange(of: keyboard2.submitted, perform: { value in
+                if value == true {
+                    handleNewQuestion()
+                }
+            })
+            
+            
             SplashView()
         }
     }
@@ -49,65 +83,5 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct NeoButton<Content: View>: View {
-    let width: CGFloat
-    let isBeveled: Bool
-    let lightStyle: Bool
-    let content: () -> Content
-    let action: () -> Void
-    
-    init(width: CGFloat, isBeveled: Bool, lightStyle: Bool, @ViewBuilder content: @escaping() -> Content, action: @escaping () -> Void) {
-        self.width = width
-        self.isBeveled = isBeveled
-        self.lightStyle = lightStyle
-        self.content = content
-        self.action = action
-    }
 
-    var body: some View {
-        Button(action: self.action, label: {
-            content()
-        })
-        .buttonStyle(NeoButtonStyle(width: width,
-                                    height: 40,
-                                    lightStyle: lightStyle,
-                                    isBeveled: true))
-    }
-}
 
-struct ButtonRow: View {
-    let buttons: [String]
-    let geometry: GeometryProxy
-    let totalPadding: CGFloat
-    @Binding var answerText: String
-    
-    
-    var body: some View {
-        HStack {
-            ForEach(buttons, id: \.self) { button in
-                if button == "empty" {
-                    Text("").frame(width: smallButtonWidth(geometry: geometry, noOfButtonsPerRow: buttons.count))
-                } else {
-                    NeoButton(width: smallButtonWidth(geometry: geometry, noOfButtonsPerRow: buttons.count),
-                              isBeveled: true, lightStyle: button == "back") {
-                        VStack {
-                            if button == "back" {
-                                Image(systemName: "chevron.backward.2")
-                            } else {
-                                Text(button)
-                            }
-                        }
-                    } action: {
-                        answerText += button
-                        print("\(answerText)")
-                    }
-                }
-            }
-        }.padding(.bottom, 1)
-    }
-    
-    func smallButtonWidth(geometry: GeometryProxy, noOfButtonsPerRow: Int) -> CGFloat {
-        (geometry.size.width - totalPadding) / CGFloat(noOfButtonsPerRow)
-        
-    }
-}

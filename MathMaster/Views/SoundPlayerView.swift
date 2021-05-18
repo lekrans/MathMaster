@@ -14,7 +14,7 @@ struct SoundPlayerView: View {
         Text("SoundPlayerView")
             .onAppear() {
                 soundPlayer.playSong(with: "ABeautifulDay-UndertaleAnimation.mp3")
-            }
+            }.frame(width: nil, height: 10)
     }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,15 @@
 		E187FDA6260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E187FDA5260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 */; };
 		E187FDA9260E243A00104D94 /* SoundPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187FDA8260E243A00104D94 /* SoundPlayerView.swift */; };
 		E187FDAC260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E187FDAB260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 */; };
+		E1A88E2C264FE788008C2125 /* CategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A88E2B264FE788008C2125 /* CategorySelectView.swift */; };
+		E1A88E3126510A00008C2125 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A88E3026510A00008C2125 /* TopView.swift */; };
+		E1A88E3426510DA1008C2125 /* GameSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A88E3326510DA1008C2125 /* GameSetupView.swift */; };
+		E1A88E3926513FBB008C2125 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A88E3826513FBB008C2125 /* GameView.swift */; };
+		E1A88E3C2651981C008C2125 /* BaseSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A88E3B2651981C008C2125 /* BaseSelectionView.swift */; };
+		E1A88E3F26526B04008C2125 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A88E3E26526B04008C2125 /* ResultView.swift */; };
+		E1A88E4226528252008C2125 /* NewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A88E4126528252008C2125 /* NewGameView.swift */; };
+		E1F9AD48264EC0B30090276E /* MLMathMasterEngine in Frameworks */ = {isa = PBXBuildFile; productRef = E1F9AD47264EC0B30090276E /* MLMathMasterEngine */; };
+		E1F9AD4C264EC83F0090276E /* MLKeyboardLib in Frameworks */ = {isa = PBXBuildFile; productRef = E1F9AD4B264EC83F0090276E /* MLKeyboardLib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,13 @@
 		E187FDA5260E22B600104D94 /* ABeautifulDay-UndertaleAnimation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ABeautifulDay-UndertaleAnimation.mp3"; sourceTree = "<group>"; };
 		E187FDA8260E243A00104D94 /* SoundPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerView.swift; sourceTree = "<group>"; };
 		E187FDAB260F150F00104D94 /* Ed Sheeran - Shape of you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ed Sheeran - Shape of you.mp3"; sourceTree = "<group>"; };
+		E1A88E2B264FE788008C2125 /* CategorySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectView.swift; sourceTree = "<group>"; };
+		E1A88E3026510A00008C2125 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		E1A88E3326510DA1008C2125 /* GameSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupView.swift; sourceTree = "<group>"; };
+		E1A88E3826513FBB008C2125 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		E1A88E3B2651981C008C2125 /* BaseSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSelectionView.swift; sourceTree = "<group>"; };
+		E1A88E3E26526B04008C2125 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		E1A88E4126528252008C2125 /* NewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F9AD4C264EC83F0090276E /* MLKeyboardLib in Frameworks */,
+				E1F9AD48264EC0B30090276E /* MLMathMasterEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +114,13 @@
 			children = (
 				E100DA71260CBF6100CF3C14 /* SplashView.swift */,
 				E187FDA8260E243A00104D94 /* SoundPlayerView.swift */,
+				E1A88E2B264FE788008C2125 /* CategorySelectView.swift */,
+				E1A88E3026510A00008C2125 /* TopView.swift */,
+				E1A88E3326510DA1008C2125 /* GameSetupView.swift */,
+				E1A88E3826513FBB008C2125 /* GameView.swift */,
+				E1A88E3B2651981C008C2125 /* BaseSelectionView.swift */,
+				E1A88E3E26526B04008C2125 /* ResultView.swift */,
+				E1A88E4126528252008C2125 /* NewGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +174,10 @@
 			dependencies = (
 			);
 			name = MathMaster;
+			packageProductDependencies = (
+				E1F9AD47264EC0B30090276E /* MLMathMasterEngine */,
+				E1F9AD4B264EC83F0090276E /* MLKeyboardLib */,
+			);
 			productName = MathMaster;
 			productReference = E100DA53260C69F000CF3C14 /* MathMaster.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +205,10 @@
 				Base,
 			);
 			mainGroup = E100DA4A260C69F000CF3C14;
+			packageReferences = (
+				E1F9AD46264EC0B30090276E /* XCRemoteSwiftPackageReference "MLMathMasterEngine" */,
+				E1F9AD4A264EC83F0090276E /* XCRemoteSwiftPackageReference "MLKeyboardLib" */,
+			);
 			productRefGroup = E100DA54260C69F000CF3C14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,11 +240,18 @@
 			files = (
 				E187FDA9260E243A00104D94 /* SoundPlayerView.swift in Sources */,
 				E11D724426240ABE007183C0 /* CalculatorButton.swift in Sources */,
+				E1A88E3C2651981C008C2125 /* BaseSelectionView.swift in Sources */,
 				E100DA59260C69F000CF3C14 /* ContentView.swift in Sources */,
 				E100DA57260C69F000CF3C14 /* MathMasterApp.swift in Sources */,
+				E1A88E2C264FE788008C2125 /* CategorySelectView.swift in Sources */,
+				E1A88E3926513FBB008C2125 /* GameView.swift in Sources */,
+				E1A88E3F26526B04008C2125 /* ResultView.swift in Sources */,
 				E187FDA2260E1BE500104D94 /* SoundPlayer.swift in Sources */,
 				E11D723F26234D92007183C0 /* NeoButtonColor.swift in Sources */,
+				E1A88E3126510A00008C2125 /* TopView.swift in Sources */,
+				E1A88E3426510DA1008C2125 /* GameSetupView.swift in Sources */,
 				E100DA72260CBF6100CF3C14 /* SplashView.swift in Sources */,
+				E1A88E4226528252008C2125 /* NewGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +440,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1F9AD46264EC0B30090276E /* XCRemoteSwiftPackageReference "MLMathMasterEngine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lekrans/MLMathMasterEngine.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.20;
+			};
+		};
+		E1F9AD4A264EC83F0090276E /* XCRemoteSwiftPackageReference "MLKeyboardLib" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lekrans/MLKeyboardLib.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1F9AD47264EC0B30090276E /* MLMathMasterEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1F9AD46264EC0B30090276E /* XCRemoteSwiftPackageReference "MLMathMasterEngine" */;
+			productName = MLMathMasterEngine;
+		};
+		E1F9AD4B264EC83F0090276E /* MLKeyboardLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1F9AD4A264EC83F0090276E /* XCRemoteSwiftPackageReference "MLKeyboardLib" */;
+			productName = MLKeyboardLib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E100DA4B260C69F000CF3C14 /* Project object */;
 }
