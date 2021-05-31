@@ -35,18 +35,6 @@ struct TopView: View {
     var body: some View {
         VStack {
             Text(headLineText).font(Font.custom("Chalkduster", size: 15))
-//            switch model.gameState {
-//            case .none:
-//                Text("none")
-//            case .initialized:
-//                Text("Initialized")
-//            case .started:
-//                Text("Started")
-//            case .timeAttackStarted:
-//                Text("TimeAttackStarted")
-//            case .stopped:
-//                Text("Stopped")
-//            }
                 
             Spacer()
             if category == nil {

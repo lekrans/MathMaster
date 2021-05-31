@@ -32,7 +32,7 @@ struct GameSetupView: View {
                 
                 Section(header: Text("No of questions")) {
                     Picker(selection: $noOfQuestions, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/, content: {
-                        ForEach([10, 20, 30, 40, 50], id: \.self) {
+                        ForEach([10, 11, 20, 30, 40, 50], id: \.self) {
                             Text(String($0))
                         }
                     }).pickerStyle(SegmentedPickerStyle())
@@ -79,7 +79,7 @@ struct GameSetupView: View {
                                 if gameType != .sequence {
                                     gameType = .random(maxTermValue)
                                 }
-                                model.newGame(category: category!, type: gameType, base: base)
+                                model.newGame(category: category!, type: gameType, base: base, noOfQuestions: noOfQuestions)
                             }
                             try model.qm?.activateNextQuestion()
                         } catch {
@@ -96,9 +96,12 @@ struct GameSetupView: View {
     
 }
 
+
+
 struct GameSetupView_Previews: PreviewProvider {
     static var previews: some View {
         GameSetupView(model: MLMathMasterEngine(), category: .constant(.add))
             .preferredColorScheme(.dark)
     }
 }
+

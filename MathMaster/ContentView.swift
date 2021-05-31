@@ -57,7 +57,7 @@ struct ContentView: View {
                     
                     if engine.gameState == .started {
                         MLNumKeyView(keyboard: keyboard2, configuration: MLNumKeyViewConfiguration(returnKey: .top))
-                            .frame(width: nil, height: 240)
+                            .frame(width: nil, height: 300)
                     } else if engine.gameState == .stopped {
                         NewGameView(model: engine, category: $category)
                     }
@@ -82,6 +82,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 
 
 

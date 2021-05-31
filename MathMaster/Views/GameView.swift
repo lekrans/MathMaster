@@ -16,13 +16,26 @@ struct GameView: View {
 
     var body: some View {
         ZStack {
-            Text(evaluatedTo).font(Font.custom("Chalkduster", size: 140))
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Text("\(1 + (model.qm?.answeredQuestions.count ?? 0))\\\(model.qm?.gameData.noOfQuestions ?? 0)")
+                        .font(Font.custom("Chalkduster", size: 20))
+                        .padding([.bottom, .trailing], 10)
+                        .padding(.top, -20)
+                        .foregroundColor(.yellow)
+                }
+                Spacer()
+            }
+            Text(evaluatedTo).font(Font.custom("Chalkduster", size: 110))
                 .foregroundColor(evaluatedTo == "V" ? .green : .red)
+                .padding(.top, 50)
             VStack {
                 Text(model.qm?.currentQuestion?.asString() ?? "12 + 5")
-                    .font(Font.custom("Chalkduster", size: 60))
+                    .font(Font.custom("Chalkduster", size: 55))
                 Text(answer)
-                    .font(Font.custom("Chalkduster", size: 100))
+                    .font(Font.custom("Chalkduster", size: 75))
                 Spacer()
                 Text(keyboardText)
                     .font(Font.custom("Chalkduster", size: 30))
